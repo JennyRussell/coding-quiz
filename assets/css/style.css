@@ -1,0 +1,50 @@
+:root {
+    --white: white;
+    --violet: rgb(115, 85, 150);
+    --black: black;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+}
+
+h1 {
+    color: var(--violet);
+    font-size: large;
+}
+
+.quiz-box {
+    margin-top: 150px;
+    width: 30%;
+    align-self: center;
+    text-align: center;
+}
+
+.quiz-header {
+    font-weight: 800;
+    font-size: 40px;
+}
+
+.quiz-body {
+    font-size: 19px;
+}
+
+.start-quiz-button {
+    width: 130px;
+    height: 40px;
+    align-self: center;
+    background-color: var(--violet);
+    color: var(--white);
+    border-radius: 5px;
+    font-size: larger;
+}
