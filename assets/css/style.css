@@ -3,6 +3,7 @@
     --violet: rgb(115, 85, 150);
     --light-violet: rgb(172, 142, 204);
     --black: black;
+    --grey: grey;
 }
 
 body {
@@ -74,4 +75,12 @@ h1 {
 
 .start-quiz-button:hover {
     background-color: var(--light-violet);
+}
+
+#test-answer {
+    display: flex;
+    font-size: 50px;
+    color: var(--grey);
+    width: 40%;
+    align-self: center;
 }
