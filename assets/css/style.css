@@ -1,6 +1,7 @@
 :root {
     --white: white;
     --violet: rgb(115, 85, 150);
+    --light-violet: rgb(172, 142, 204);
     --black: black;
 }
 
@@ -9,6 +10,7 @@ body {
     flex-direction: column;
     padding: 0;
     margin: 0;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 nav {
@@ -23,6 +25,27 @@ h1 {
     font-size: large;
 }
 
+#answersList {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    text-align: left;
+    padding-left: 0;
+}
+
+#listItem {
+    font-size: larger;
+    background-color: var(--violet);
+    margin-bottom: 5px;
+    border-radius: 15px;
+    padding: 10px;
+    color: white;
+}
+
+#listItem:hover {
+    background-color: var(--light-violet);
+}
+
 .quiz-box {
     margin-top: 150px;
     width: 30%;
@@ -32,7 +55,7 @@ h1 {
 
 .quiz-header {
     font-weight: 800;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .quiz-body {
@@ -47,4 +70,8 @@ h1 {
     color: var(--white);
     border-radius: 5px;
     font-size: larger;
+}
+
+.start-quiz-button:hover {
+    background-color: var(--light-violet);
 }

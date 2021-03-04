@@ -1,23 +1,122 @@
-var startQuiz = $('.start-quiz-button');
+let startQuiz = document.getElementById("start-quiz-button");
+let timeDisplay = document.getElementById("placeholder");
+let quizQuestion = document.getElementById("quiz-question");
+let quizAnswers = document.getElementById("quiz-answers");
+
+let question1 = "These are all Javascript data types except:";
+let answers1 = ["undefined", "number", "boolean", "float"];
+let answers2 = ["A", "V", "X", "floaDDt"];
+
+let secondsLeft = 60;
+let answerIndex = 0;
+
+// timer countdwon function
+function startCountdown() {
+    timer = setInterval(function() {
+        secondsLeft--;
+        if (secondsLeft >= 0) {
+            timeDisplay.innerHTML = secondsLeft;
+        }
+        if (secondsLeft === 0) {
+
+            clearInterval(secondsLeft);
+        }
+    }, 1000);
+}
+
+function startQuizNow() {
+    startQuiz.addEventListener('click', () => {
+        document.getElementById('start-quiz-button').style.visibility = 'hidden';
+        document.getElementById("quiz-answers").remove();
+        startCountdown();
+        quizQuestions();
+        injectQuestion();
+    })
+}
+
+startQuizNow();
+
+function injectQuestion() {
+    console.log(answerIndex)
+    switch (answerIndex) {
+        case 0:
+            var correctAnswer1 = "float";
+            quizAnswer(answers1, correctAnswer1);
+            break;
+        case 1:
+            var correctAnswer2 = "float";
+            quizAnswer(answers2, correctAnswer2);
+            break;
+    }
+}
+
+function quizQuestions() {
+    document.getElementById("quiz-question").style.textAlign = "left";
+    quizQuestion.textContent = question1;
+
+}
 
 
+function quizAnswer(answers, correctAnswer) {
+
+    var test = document.getElementById("test");
+    var answersList = document.createElement("UL");
+    answersList.setAttribute("id", "answersList");
+    test.appendChild(answersList);
 
 
-//press button to start quiz
+    for (var i = 0; i < answers.length; i++) {
+        // Create the list item:
+        var listItem = document.createElement('LI');
+        listItem.setAttribute("id", "listItem");
 
-//start 1 min countdown on start-button click
+        // Set its contents:
+        listItem.appendChild(document.createTextNode(answers[i]));
+
+        // Add it to the list:
+        answersList.appendChild(listItem);
+
+    }
+    for (var i = 0; i < answersList.children.length; i++) {
+        answersList.children[i].addEventListener('click', (event) => {
+            answerIndex++;
+            var elementText = event.target.innerHTML;
+            var isAnswerCorrect = answerValidator(elementText, correctAnswer);
+            injectAnswerText(isAnswerCorrect);
+            injectQuestion();
+            //go to nexxt question
+            // how do we dynamically select the next question?
+        });
+    }
+}
+
+function injectAnswerText(isAnswerCorrect) {
 
 
-//on starting quiz change .quiz-header to display question
+    if (isAnswerCorrect) {
+        document.getElementById("test-answer").innerHTML = "CORRECT";
+        //inject correct answer text
+        // makeVariable = injectedNodeText;
+    } else {
+        document.getElementById("test-answer").innerHTML = "INCORRECT";
+        //inject incorrect answer text
+        // makeVariable = injectedNodeText;
+    }
+    setTimeout(() => {
+        //clear incorrect answer text
+        // makeVariable.remove();
+        document.getElementById("test-answer").innerHTML = "";
+    }, 3000);
+}
 
-
-//on starting quiz change .quiz-body to display list of options
-
-
-//on start quiz, hide start quiz button
-
-
-//quiz list options change bg color to lighter shade when hovering over it
+//returns true of
+function answerValidator(elementText, correctAnswer) {
+    if (elementText === correctAnswer) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 
 // on wrong answer, move on to the next question
