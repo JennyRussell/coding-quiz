@@ -6,6 +6,21 @@
     --grey: grey;
 }
 
+button {
+    border: none;
+    background-color: var(--violet);
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#hide {
+    visibility: hidden;
+}
+
+#show {
+    visibility: visible;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -67,9 +82,7 @@ h1 {
     width: 130px;
     height: 40px;
     align-self: center;
-    background-color: var(--violet);
     color: var(--white);
-    border-radius: 5px;
     font-size: larger;
 }
 
@@ -77,10 +90,57 @@ h1 {
     background-color: var(--light-violet);
 }
 
-#test-answer {
+#result-text {
     display: flex;
-    font-size: 50px;
+    font-size: 30px;
     color: var(--grey);
     width: 40%;
     align-self: center;
+}
+
+#submitButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 30px;
+    width: 60px;
+    background-color: var(--violet);
+    color: var(--white);
+    padding-top: 5px;
+}
+
+#submitButton:hover {
+    background-color: var(--light-violet);
+}
+
+#saveInitialsInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    height: 30px;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+
+#setInitialsText {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+}
+
+#buttons {
+    display: flex;
+    width: 30%;
+    align-self: center;
+    color: var(--white);
+}
+
+#goBackBtn:hover,
+#highScoreBtn:hover {
+    background-color: var(--light-violet);
+}
+
+#highScoresList {
+    background-color: var(--violet);
+    color: var(--white);
 }

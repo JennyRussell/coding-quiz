@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/reset.css">
+    <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Document</title>
 </head>
 
 <body>
     <nav class="nav">
-        <h1 class="nav-text">View Highscores</h1>
+        <h1 class="nav-text" id="nav-text">View Highscores</h1>
+        <p id="hs"></p>
         <p class="timer-display">Time: <span id="placeholder">0</span></p>
-
     </nav>
-    <container id="test" class="quiz-box">
-        <p id="quiz-question" class="quiz-header">Coding Quiz Challenge</p>
-        <p id="quiz-answers" class="quiz-body">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your scoreTime by ten seconds.</p>
-
-    </container>
-    <button id="start-quiz-button" class="start-quiz-button">Start Quiz</button>
-    <p id="test-answer"></p>
+    <container id="question-container" class="quiz-box" />
+    <p id="result-text"></p>
+    <container id="buttons"></container>
     <script src="assets/js/script.js"></script>
 
 </body>
