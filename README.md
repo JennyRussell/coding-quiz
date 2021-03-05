@@ -11,7 +11,7 @@ https://jennyrussell.github.io/coding-quiz/
 
 # Project Screenshot
 
-![main page](Screen Shot 2021-03-05 at 12.03.21 AM.png)
+![Alt text](main.png?raw=true "Main Page")
 
 
 # License
